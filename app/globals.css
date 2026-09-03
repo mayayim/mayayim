@@ -1,10 +1,6 @@
 @import "@fontsource/caveat/500.css";
 @import "@fontsource/caveat/600.css";
 @import "@fontsource/caveat/700.css";
-@import "@fontsource/quicksand/400.css";
-@import "@fontsource/quicksand/500.css";
-@import "@fontsource/quicksand/600.css";
-@import "@fontsource/quicksand/700.css";
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +11,8 @@ html {
 }
 
 body {
-  font-family: "Quicksand", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: #ffffff;
   color: #1c1c1e;
 }

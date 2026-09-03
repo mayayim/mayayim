@@ -14,7 +14,17 @@ module.exports = {
       },
       fontFamily: {
         signature: ["Caveat", "cursive"],
-        body: ["Quicksand", "sans-serif"],
+        body: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "SF Pro Text",
+          "SF Pro Display",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
       },
     },
   },
