@@ -8,12 +8,11 @@ module.exports = {
     extend: {
       colors: {
         ink: "#1c1c1e",
-        stone: "#6b6f76",
+        stone: "#6F6F6F",
         haze: "#dcdcdc",
-        periwinkle: "#5b6ee8",
+        periwinkle: "#4474FF",
       },
       fontFamily: {
-        signature: ["Caveat", "cursive"],
         body: [
           "Inter",
           "-apple-system",

@@ -1,2 +1,15 @@
 node_modules
 .next
+
+# raw source assets dropped in the project root (already copied into public/)
+/*.png
+/*.jpg
+/*.JPG
+/*.jpeg
+/*.webp
+/*.svg
+/*.heic
+/*.HEIC
+/*.pdf
+/*.mov
+.DS_Store

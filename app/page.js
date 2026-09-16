@@ -1,43 +1,105 @@
-import Placeholder from "@/components/Placeholder";
+import Link from "next/link";
+import Footer from "@/components/Footer";
+import ExperienceList from "@/components/ExperienceList";
+
+const EXPERIENCE = [
+  {
+    role: "apple",
+    year: "2026",
+    href: "https://www.apple.com",
+    description:
+      "design management, content strategy, + communications for supply chain manufacturing",
+  },
+  {
+    role: "jared's heart of success",
+    year: "2025",
+    href: "https://www.jaredsheartofsuccess.org",
+    description:
+      "rebranding + digital media asset design for community outreach programs, fundraisers, and events",
+  },
+  {
+    role: "camp swamp",
+    year: "2024",
+    href: "https://campswamp.com",
+    description: "project management for web, branding, + social media redesign",
+  },
+];
 
 const SWATCHES = [
-  { color: "#0f6156", label: "bilingual bedtime deck" },
-  { color: "#161616", label: "product ops overhaul" },
-  { color: "#5b6ee8", label: "apple lifeguard" },
-  { color: "#e8590c", label: "davidai brand analysis" },
-  { color: "#5a6c94", label: "hoka x hello82" },
-  { color: "#c4525a", label: "critical reflection" },
+  { color: "#161616", label: "impulse", href: "/projects/impulse", logo: "/logos/impulse.svg" },
+  {
+    color: "#5b6ee8",
+    label: "apple advanced manufacturing center",
+    href: "/projects/apple-advanced-manufacturing-center",
+    logo: "/logos/apple-advanced-manufacturing-center.svg",
+  },
+  {
+    color: "#e8590c",
+    label: "jared's heart of success",
+    href: "/projects/jareds-heart-of-success",
+    logo: "/logos/jareds-heart-of-success.svg",
+  },
+  {
+    color: "#c2984f",
+    label: "georgia tech projects",
+    href: "/projects/georgia-tech",
+    logo: "/logos/georgia-tech.svg",
+  },
+  { color: "#0f6156", label: "junti", href: "/projects/junti", logo: "/logos/junti.svg" },
+  { color: "#5a6c94", label: "camp swamp", href: "/projects/camp-swamp", logo: "/logos/camp-swamp.svg" },
+  { color: "#c4525a", label: "2", href: "/projects/2", logo: "/logos/2.svg" },
 ];
 
 export default function HomePage() {
   return (
-    <div className="px-6 pb-24 pt-16 sm:px-12 sm:pt-24">
-      <h1 className="max-w-2xl font-body text-2xl leading-snug text-stone sm:text-3xl">
-        maya yim is an{" "}
-        <span className="text-periwinkle">
-          interdisciplinary designer + product manager
-        </span>{" "}
-        connecting people to one another and themselves through designing
-        for <span className="font-semibold text-ink">learning, development, and education.</span>
-      </h1>
+    <div className="flex flex-1 flex-col px-6 pt-20 sm:px-12 sm:pt-28">
+      <div className="flex flex-1 flex-col items-center justify-center gap-16">
+        <h1 className="mx-auto max-w-3xl text-center font-body text-[16pt] leading-snug text-stone">
+          maya yim is an{" "}
+          <span className="text-periwinkle">
+            interdisciplinary designer + product manager
+          </span>{" "}
+          connecting people through designing for{" "}
+          <span className="font-semibold text-stone">
+            learning, development, and education.
+          </span>
+        </h1>
 
-      <ul className="mt-24 flex flex-wrap gap-10 sm:mt-32 sm:gap-16">
-        {SWATCHES.map((s) => (
-          <li key={s.label} className="group">
-            <span
-              className="block h-3.5 w-3.5 rounded-sm transition-transform group-hover:scale-125"
-              style={{ backgroundColor: s.color }}
-              aria-label={s.label}
-              title={s.label}
-            />
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-24 grid grid-cols-1 gap-6 sm:mt-32 sm:grid-cols-2">
-        <Placeholder className="aspect-[4/3]" />
-        <Placeholder className="aspect-[4/3]" />
+        <ul className="flex flex-wrap justify-center gap-10 sm:gap-16">
+          {SWATCHES.map((s) => (
+            <li
+              key={s.label}
+              className="group relative z-0 h-3.5 w-3.5 hover:z-10"
+            >
+              <Link href={s.href} className="absolute -inset-4" title={s.label}>
+                <span className="sr-only">{s.label}</span>
+              </Link>
+              <span
+                className="pointer-events-none absolute left-1/2 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-sm transition-[width,height] duration-300 ease-out group-hover:h-[70px] group-hover:w-[70px]"
+                style={{ backgroundColor: s.color }}
+                aria-hidden="true"
+              />
+              {s.logo && (
+                <img
+                  src={s.logo}
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-3.5 w-3.5 max-w-none -translate-x-1/2 -translate-y-1/2 rounded-sm object-cover opacity-0 shadow-lg transition-[width,height,opacity] duration-300 ease-out group-hover:h-[70px] group-hover:w-[70px] group-hover:opacity-100"
+                />
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
+
+      <div className="mt-16 font-body text-stone">
+        <p className="text-sm">my experience</p>
+        <div className="mt-4">
+          <ExperienceList items={EXPERIENCE} />
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
