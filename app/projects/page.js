@@ -1,27 +1,6 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
-
-const PROJECTS = [
-  {
-    slug: "impulse",
-    title: "impulse",
-    cover: "/covers/impulse.svg",
-    objectPosition: "object-bottom",
-  },
-  {
-    slug: "apple-advanced-manufacturing-center",
-    title: "Apple Advanced Manufacturing Center",
-    cover: "/covers/apple-advanced-manufacturing-center.svg",
-  },
-  { slug: "2", title: "2", cover: "/covers/2.svg" },
-  { slug: "junti", title: "JUNTÍ", cover: "/covers/junti.svg" },
-  { slug: "camp-swamp", title: "CAMP SWAMP", cover: "/covers/camp-swamp.svg" },
-  {
-    slug: "jareds-heart-of-success",
-    title: "JARED'S HEART OF SUCCESS",
-    cover: "/covers/jareds-heart-of-success.svg",
-  },
-];
+import ProjectGrid from "@/components/ProjectGrid";
 
 export default function ProjectsPage() {
   return (
@@ -39,21 +18,7 @@ export default function ProjectsPage() {
         </Link>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2">
-        {PROJECTS.map((p) => (
-          <Link
-            key={p.slug}
-            href={`/projects/${p.slug}`}
-            className="group relative aspect-[16/7] overflow-hidden rounded-sm transition-opacity hover:opacity-90"
-          >
-            <img
-              src={p.cover}
-              alt={p.title}
-              className={`h-full w-full object-cover ${p.objectPosition ?? ""}`}
-            />
-          </Link>
-        ))}
-      </div>
+      <ProjectGrid className="mt-16 sm:mt-20" />
 
       <Footer />
     </div>

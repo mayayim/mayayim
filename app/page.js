@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import ExperienceList from "@/components/ExperienceList";
+import ProjectGrid, { GT_PROJECTS } from "@/components/ProjectGrid";
 
 const EXPERIENCE = [
   {
@@ -90,6 +91,16 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="mt-16 font-body text-stone">
+        <p className="text-sm">my projects</p>
+        <ProjectGrid className="mt-4" />
+      </div>
+
+      <div className="mt-16 font-body text-stone">
+        <p className="text-sm">georgia tech projects</p>
+        <ProjectGrid projects={GT_PROJECTS} className="mt-4" />
       </div>
 
       <div className="mt-16 font-body text-stone">
