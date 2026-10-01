@@ -5,15 +5,15 @@ import Placeholder from "@/components/Placeholder";
 export default function AMCPage() {
   return (
     <div id="top" className="flex flex-1 flex-col px-6 pt-16 sm:px-12 sm:pt-24">
-      <div className="flex gap-10">
+      <div className="flex flex-col gap-6 sm:flex-row sm:gap-10">
         <Link
           href="/projects"
-          className="w-32 shrink-0 font-body text-sm text-stone hover:text-periwinkle transition-colors"
+          className="shrink-0 font-body sm:w-32 text-sm text-stone hover:text-periwinkle transition-colors"
         >
           ← back to projects
         </Link>
 
-        <div className="mx-auto max-w-4xl flex-1">
+        <div className="mx-auto w-full min-w-0 max-w-4xl flex-1">
           <img
             src="/covers/apple-advanced-manufacturing-center.svg"
             alt="Apple Advanced Manufacturing Center"
